@@ -6,6 +6,12 @@ const cors = require('cors');
 
 app.use(express.json());
 
+app.use(cors({
+  origin: '*', // Allow all origins (for testing purposes)
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+}));
+
 
 mongoose
   .connect("mongodb+srv://achyut1234duggal:JLMoPvJezqrwhpr1@cluster0.ades5.mongodb.net/", {
